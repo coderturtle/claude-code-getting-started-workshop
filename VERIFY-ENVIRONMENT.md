@@ -26,12 +26,6 @@ Goal: confirm the workshop can be completed end-to-end, and capture any environm
 - Hooks/guards automation works in your Claude Code setup (if you plan to demo them)
 - Git milestone tags/branches exist in the workshop repo (if you’re using resume/diff checkpoints)
 
->
-git show milestone/solution:src/app.py >/dev/null && echo "✅ app.py exists"
-git show milestone/solution:src/storage.py >/dev/null && echo "✅ storage.py exists"
-git show milestone/solution:tests/test_guardrails_traversal.py >/dev/null && echo "✅ guardrail test exists"
-git show milestone/solution:tests/README.md >/dev/null && echo "✅ tests/README.md exists"
-
 ---
 
 ## 1) Pre-flight checklist (5 minutes)

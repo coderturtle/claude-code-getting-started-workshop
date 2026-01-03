@@ -24,9 +24,6 @@ Then work through labs in order: `labs/00…07`, using prompts in `prompts/`.
 ---
 
 ## Repo map (what’s where)
-## Agents and Skills (progressive activation)
-All agents/skills exist from day one; the labs introduce when to use them. See `.claude/agents/README.md` and `.claude/skills/README.md`.
-
 
 ### Primary docs
 - `WORKSHOP.md` — facilitator-led agenda + exercises
@@ -146,3 +143,8 @@ See: `CONTRIBUTING.md`
 
 ## License
 Add your preferred license for internal/external sharing (MIT is common for workshop repos).
+
+
+## Guardrails
+- Titles are sanitized into safe filenames
+- Resolved file paths are enforced to stay under `./adrs` (prevents traversal)
