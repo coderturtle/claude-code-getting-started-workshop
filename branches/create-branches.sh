@@ -1,6 +1,6 @@
 set -euo pipefail
 
-PACK_DIR="./"
+PACK_DIR="."
 
 git checkout -B workshop/start
 git add -A
@@ -22,7 +22,7 @@ for item in "${MILESTONES[@]}"; do
   echo "==> Creating $TAG from $DIR"
 
   git checkout -B tmp/milestone workshop/start
-  rsync -a --delete "${PACK_DIR}/branches/${DIR}/" ./
+  rsync -a --delete "${PACK_DIR}/${DIR}/" ./
 
   git add -A
   git commit -m "milestone: $TAG"
