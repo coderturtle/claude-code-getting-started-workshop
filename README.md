@@ -1,4 +1,5 @@
 # Claude Code Workshop — ADR Pocket
+![Claude Turtle](header.png)
 
 This repo is a hands-on workshop to learn **Claude Code** by building a small service (**ADR Pocket**) and deliberately using:
 - **Plan Mode / permission discipline**
