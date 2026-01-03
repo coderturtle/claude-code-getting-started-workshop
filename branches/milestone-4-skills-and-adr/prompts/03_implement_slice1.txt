@@ -1,0 +1,17 @@
+Use PLAN-SLICE.md to implement Slice 1.
+Rules:
+- Use strict **Red → Green → Refactor**. For each behavior: write a failing test, run pytest (red), implement minimal code, run pytest (green).
+- Start in Plan Mode: propose a small plan + file list; wait for approval.
+- Tests first (or at least in the same step).
+- Keep diffs small; no refactors.
+- Run pytest after each step and fix failures.
+
+Implement:
+- GET /health
+- POST /adrs (writes markdown under adrs/)
+- GET /adrs (lists ADRs)
+
+End by updating README with minimal curl examples.
+
+
+Tip: If you drift, switch to `tdd-coach` and use `prompts/03b_tdd_step_driver.txt`.

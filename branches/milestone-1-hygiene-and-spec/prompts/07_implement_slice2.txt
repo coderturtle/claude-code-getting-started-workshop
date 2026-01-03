@@ -1,0 +1,12 @@
+Implement Slice 2 (get by id + delete) using the same slice loop.
+Rules:
+- Plan Mode first
+- tests first
+- small diffs
+- review with code-reviewer before finalizing
+
+Implement:
+- GET /adrs/{id}
+- DELETE /adrs/{id}
+Update README examples.
+Run pytest and ensure green.

@@ -1,0 +1,11 @@
+Interview me with 12–18 clarifying questions (with follow-ups until unambiguous).
+Then write SPEC.md with:
+- Goal / non-goals
+- User stories
+- API endpoints
+- Data model (ADR markdown + naming)
+- Error cases (incl. traversal and invalid input)
+- Test plan
+- Acceptance criteria
+
+Do NOT write any code yet. Only write SPEC.md.

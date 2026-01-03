@@ -1,0 +1,11 @@
+Act only as tdd-coach.
+
+We are about to implement Slice 1. Apply the tdd-red-green Skill.
+
+First: produce a short list of 3–5 behaviors we will implement, in order.
+For each behavior, state:
+- the test file to add/update
+- the key assertion
+- the endpoint or function being implemented
+
+Do NOT write production code yet. Only the plan and test list.
