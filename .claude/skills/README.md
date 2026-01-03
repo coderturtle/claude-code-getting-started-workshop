@@ -9,13 +9,10 @@ The workshop introduces (“activates”) them progressively.
 - Skills reduce prompt boilerplate and keep quality consistent
 - Skills scale across repos and teams
 
-## Activation map (when you start using each Skill)
-
-| Skill | What it enforces | Introduced in |
-|---|---|---|
-| `tdd-red-green` | Strict Red → Green → Refactor loop; evidence for RED | **Lab 03A** |
-| `test-hygiene` | Readable, stable pytest; minimal mocking; tmp_path | **Lab 03A** (applies immediately in Lab 03) |
-| `adr-style` | ADR frontmatter + standard sections + tone | **Lab 04** (Skills + ADR) |
+## Skills included
+- `adr-style` — ADR format and conventions
+- `test-hygiene` — readable pytest structure
+- `tdd-red-green` — strict Red→Green→Refactor loop
 
 ## How to use
 Tell Claude:

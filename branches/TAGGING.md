@@ -1,14 +1,7 @@
 # TAGGING.md — Create milestone tags/branches
-_Last updated: 2026-01-03_
+_Last updated: 2026-01-02_
 
-## Why tags (not branches) for milestones
-Tags are immutable checkpoints for workshops. Learners can safely resume at a known state.
-
-## Snapshot policy
-All snapshots include the full `.claude/agents` and `.claude/skills` sets.
-The workshop “activates” them progressively in the labs and docs.
-
-## Milestone tags
+Use tags for immutable checkpoints:
 - `milestone/0-scaffold`
 - `milestone/1-hygiene-and-spec`
 - `milestone/2-slice-plan`
@@ -18,4 +11,4 @@ The workshop “activates” them progressively in the labs and docs.
 - `milestone/6-slice2-optional`
 - `milestone/solution`
 
-See `QUICK-COMMANDS.md` for the one-shot loop to generate them.
+See `QUICK-COMMANDS.md` for a copy/paste loop to generate them from these snapshot folders.
