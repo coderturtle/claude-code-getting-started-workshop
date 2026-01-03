@@ -21,5 +21,5 @@ The workshop introduces (“activates”) them progressively.
 Tell Claude:
 > “Use the `<skill-name>` Skill.”
 
-Or reference it in your request:
+Or reference it while requesting output:
 > “Generate ADR-0002 using adr-style.”
