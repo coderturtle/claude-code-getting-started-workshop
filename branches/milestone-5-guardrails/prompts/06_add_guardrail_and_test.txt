@@ -1,4 +1,0 @@
-Implement one guardrail from the security review (path traversal / sanitize filename / enforce writes under adrs/).
-Add at least one pytest test that proves it.
-Keep changes small. No refactors.
-Run pytest and fix until green.

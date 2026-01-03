@@ -1,8 +1,0 @@
-Read SPEC.md and produce PLAN-SLICE.md for Slice 1 (health + create + list).
-Include:
-- In scope / out of scope
-- File list
-- Tests-first checklist
-- Acceptance criteria
-- Commands to run
-Do NOT write code yet. Only write PLAN-SLICE.md.

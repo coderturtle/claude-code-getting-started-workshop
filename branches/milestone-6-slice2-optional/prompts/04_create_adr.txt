@@ -1,3 +1,0 @@
-Create ADR-0001 documenting the decision to store ADRs as markdown files under /adrs.
-Use the adr-style Skill.
-Ensure correct YAML frontmatter and required sections.

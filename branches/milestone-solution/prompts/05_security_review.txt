@@ -1,8 +1,0 @@
-Act only as the security-reviewer.
-Review our approach for storing ADRs as markdown files on disk.
-Identify:
-- path traversal risks
-- unsafe file writes/deletes
-- input validation issues
-Propose mitigations and at least 3 tests that prove the mitigations work.
-Keep it practical and minimal.
