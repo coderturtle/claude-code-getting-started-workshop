@@ -1,70 +1,44 @@
 # ADR Pocket – Project rules
 
+## Goal
+A tiny FastAPI service that stores Architecture Decision Records (ADRs) as markdown files under `/adrs`.
+
+## Engineering rules
+- Python 3.12 + FastAPI
+- pytest for tests
+- Keep endpoints minimal and documented
+- Prefer small commits with clear messages
+- Never modify files under `adrs/` manually; only via app logic
 
 ## Agentic hygiene (markdown sprawl control)
-Claude Code can generate lots of markdown while it works. Keep the repo clean:
+- Prefer updating existing docs over creating new markdown files.
+- Use `scratch/` for temporary notes and drafts; mark them TEMPORARY.
+- Keep authoritative docs limited to: `SPEC.md`, `PLAN-SLICE.md`, `labs/`, `prompts/`, `adrs/`, and core workshop docs.
+- When in doubt, ask the `repo-hygienist` agent to consolidate or delete.
 
-- **Temporary notes go in `scratch/` only** (prefer `scratch/working.md`).
-- Do **not** create random top-level `*.md` files while iterating.
-- Before completing a lab/module:
-  1) Consolidate useful content into canonical artifacts (`SPEC.md`, `PLAN-SLICE.md`, ADRs, README)
-  2) Delete scratch/draft files you no longer need
-  3) Run the `hygiene-keeper` subagent and produce a short hygiene report
+## Small diffs (diff budget)
+- Work in steps that touch max **3 files** and aim for **≤ ~80 changed lines** per step.
+- If you need more, split into multiple green steps.
 
-Canonical artifacts we keep:
-- `SPEC.md`, `PLAN-SLICE*.md`, `adrs/ADR-*.md`
-- Workshop docs (`WORKSHOP.md`, `SELF-PACED.md`, labs/prompts/scripts/expected)
+## Slice discipline
+- Do not implement code until `SPEC.md` exists.
+- Do not implement a slice until `PLAN-SLICE.md` exists.
+- Keep scope small; one slice at a time.
 
-If in doubt: **consolidate** rather than create a new doc.
+## TDD and evidence (Red → Green)
+- Write a failing test first (RED) and capture evidence (failing assertion or exact failure).
+- Implement minimal code to pass (GREEN).
+- Refactor only after green (and keep it tiny).
 
+## Minimal mocking + short test descriptions (anti-brittle)
+- Prefer black-box API tests (TestClient) and filesystem isolation (`tmp_path`).
+- Avoid mocking internal functions; mock only true externals.
+- Add a 1-line description comment above each test (behavior + why).
 
----
+## Skills
+- If you repeat an instruction twice, it should become a Skill.
+- Use `adr-style` for ADRs and `tdd-red-green` for implementation loops.
 
-## Agentic efficiency rules (small diffs, evidence, and test stability)
-These rules exist because agentic coding can drift quickly. They keep the work **predictable, reviewable, and testable**.
-
-### 1) Small diffs (diff budget)
-**Rule:** work in steps that touch **max 3 files** and aim for **≤ ~80 changed lines** per step.
-- If you need more, split into multiple steps and keep each step green.
-
-**Why it matters for agentic development**
-- Small diffs make it easier to *see* what the agent changed and to rollback safely.
-- Reduces “helpful” rewrites that break unrelated things.
-- Faster reviews, faster iteration, fewer accidental regressions.
-
-### 2) Evidence before implementation (prove the RED)
-**Rule:** Before writing production code, show evidence that the test is red:
-- paste the failing assertion line OR
-- describe the exact failure (status code / exception / assertion) in one sentence.
-
-**Why it matters**
-- Prevents “tests that never failed” (false confidence).
-- Keeps the agent honest: the test must demonstrate the missing behavior.
-- Speeds up debugging because you capture the failure reason at the moment it happens.
-
-### 3) Minimal mocking (avoid brittle tests)
-**Rule:** Prefer **black-box tests** over mocks:
-- For API work: use `FastAPI TestClient` (call endpoints like a user would).
-- For filesystem: use `tmp_path` and monkeypatch the storage directory.
-- Only mock external networks/services (not internal functions).
-
-**Why it matters (and why it helps agentic dev)**
-- Agents often over-mock, producing tests that pass while the real behavior is broken.
-- Heavy mocking makes tests tightly coupled to implementation details (brittle).
-- Black-box tests validate outcomes, so the agent can refactor without breaking tests.
-- `tmp_path` isolates state, preventing flaky tests and “works on my machine” errors.
-
-### 4) Short test descriptions (anti-brittleness)
-**Rule:** Each test should include a 1-line description comment:
-- what behavior it verifies
-- why it exists (edge case / regression)
-
-Example:
-```python
-# verifies traversal titles are rejected so we can't write outside ./adrs
-```
-
-**Why it matters**
-- Agents can generate many tests quickly; short descriptions keep intent clear.
-- Prevents brittle tests because intent guides future refactors (assert outcomes, not internals).
-- Improves maintenance: humans can see why a test exists without reading the whole file.
+## Guardrails
+- Treat file-path handling as security-sensitive (prevent traversal).
+- Add guardrail tests for the risks you mitigate.

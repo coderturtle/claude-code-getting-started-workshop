@@ -8,7 +8,7 @@ Subagents are specialized roles you can invoke to prevent the “one agent does 
 - Improves quality by forcing focused thinking
 - Speeds delivery by parallelizing reasoning (contract vs tests vs security)
 
-## Agents included by end of lab
+## Agents included
 - `api-designer` — API contract and error cases (no code)
 - `test-writer` — tests-first checklists and pytest scaffolding
 - `security-reviewer` — footguns, mitigations, guardrail tests

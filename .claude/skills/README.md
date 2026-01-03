@@ -8,7 +8,7 @@ Skills are reusable, portable instructions that enforce consistent output.
 - Skills reduce prompt boilerplate and make quality consistent.
 - Skills scale across repos and teams.
 
-## Skills included by end of workshop
+## Skills included
 - `adr-style` — ADR format and conventions
 - `test-hygiene` — readable pytest structure
 - `tdd-red-green` — strict Red→Green→Refactor loop

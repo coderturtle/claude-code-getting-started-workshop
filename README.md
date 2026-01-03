@@ -143,3 +143,8 @@ See: `CONTRIBUTING.md`
 
 ## License
 Add your preferred license for internal/external sharing (MIT is common for workshop repos).
+
+
+## Guardrails
+- Titles are sanitized into safe filenames
+- Resolved file paths are enforced to stay under `./adrs` (prevents traversal)
