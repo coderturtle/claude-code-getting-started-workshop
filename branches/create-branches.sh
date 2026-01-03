@@ -1,6 +1,6 @@
 set -euo pipefail
 
-PACK_DIR=""
+PACK_DIR="./"
 
 git checkout -B workshop/start
 git add -A
